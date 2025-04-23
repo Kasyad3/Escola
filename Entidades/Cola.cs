@@ -4,7 +4,7 @@ namespace EscolaExemplo.Entidades
     public class Cola : MaterialEscolar
     {
 
-        public double PrecoMaterial { get; } = 5;
+        public double PrecoMaterial { get; set; }
         public string Viscosidade { get; set; }
         public double Peso { get; set; }
         public ColasEnum TipoCola { get; set; }
@@ -20,14 +20,17 @@ namespace EscolaExemplo.Entidades
             if (colaEscolhida == ColasEnum.Bastao)
             {
 
-                preco = 5;
+                PrecoMaterial = 5;
             }
             else if (colaEscolhida == ColasEnum.Branca)
             {
-                preco = 3;
+                PrecoMaterial = 3;
             }
 
-            else preco = 7;
+            else if (colaEscolhida == ColasEnum.Quente)
+            {
+                PrecoMaterial = 7;
+            }
 
 
 

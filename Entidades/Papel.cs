@@ -8,10 +8,44 @@ namespace EscolaExemplo.Entidades
 {
     public class Papel : MaterialEscolar
     {
-        public double precoMaterial { get; } = 10;
+        public double PrecoMaterial { get; set; }
         public double tamanho { get; set; }
         public double expessura { get; set; }
         public string textura { get; set; }
-        public ColasEnum Anotar { get; set; }
+        public PapelEnum TipoPapel { get; set; }
+
+
+        public Papel(PapelEnum papelEscolhido)
+        {
+            TipoPapel = papelEscolhido;
+            preco = CalcularPrecoPapel(papelEscolhido);
+        }
+
+        public double CalcularPrecoPapel(PapelEnum papelEscolhido)
+        {
+            if (papelEscolhido == PapelEnum.Sufite)
+            {
+
+                PrecoMaterial = 5;
+            }
+            else if (papelEscolhido == PapelEnum.Crepom)
+            {
+                PrecoMaterial = 3;
+            }
+            
+            else if (papelEscolhido == PapelEnum.Cartolina)
+            {
+                PrecoMaterial = 7;
+            }
+
+            
+
+
+
+            return preco;
+
+        }
     }
 }
+    
+
